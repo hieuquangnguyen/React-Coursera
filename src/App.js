@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
-import Menu from './components/MenuComponent';
+import MenuDetail from './components/DishDetailComponent';
 
 import { DISHES } from './shared/dishes';
 
@@ -27,7 +27,7 @@ class App extends Component  {
             </div>
         </Navbar>
         {/* Hiển thị Menu */}
-        <Menu dishes={this.state.dishes} />
+        <MenuDetail dishes={this.state.dishes} />
       </div>
     );
   }

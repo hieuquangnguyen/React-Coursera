@@ -5,9 +5,12 @@ import '../App.css';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
 import { DISHES } from '../shared/dishes';
 
-class Menu extends Component {
+class MenuDetail extends Component {
 
- 
+  // normaldish = {name :"", description:"",comments:[]};
+
+  test = "ok1";
+  
   // khai bao constructor 
   constructor(props) {
     super(props);
@@ -19,6 +22,7 @@ class Menu extends Component {
     this.state = {
       // gán ban đầu bằng null kiểu như chưa click cái nào hết
       selectedDish: null,
+      test: ""
     };
   }
 
@@ -27,6 +31,10 @@ class Menu extends Component {
   onDishSelect(dish) {
     // setState để khowir tao gawns SelectedDish = dish
     this.setState({ selectedDish: dish });
+    // this.setState({test : "ok2"});
+    // this.test = "Ok2";
+    // alert("đã click")
+    // this.normaldish = dish;
   }
 
   // renderDish khi click thì sẽ xuất hiện cái gì
@@ -48,23 +56,23 @@ class Menu extends Component {
       );
   }
 
-  // renderComment(dish){
-  //   if(dish!=null)
-  //   {
-  //     const cmt = dish.comments.map((cmt) => {
-  //       return(
-  //         <div>
-  //           <p> {cmt.author} </p>
-  //         </div>
-  //       );
-  //     });
-  //     return cmt;
-  //   }
-  //   else
-  //   return(
-  //     <div></div>
-  //   );
-  // }
+  renderComment(dish){
+    if(dish!=null)
+    {
+      const cmt = dish.comments.map((cmt) => {
+        return(
+          <div>
+            <p> {cmt.author} </p>
+          </div>
+        );
+      });
+      return cmt;
+    }
+    else
+    return(
+      <div></div>
+    );
+  }
 
   // render main
   render() {
@@ -119,9 +127,9 @@ class Menu extends Component {
           </div>
           <div className="col-12 col-md-5 m-1">
           {/* dung toan tu cho ko dung cu phap dc */}
-          {/* {this.state.selectedDish != null ? <h4>comments</h4> : <div> </div>}
+          {this.state.selectedDish != null ? <h4>comments</h4> : <div> </div>}
           
-          {this.renderComment(this.state.selectedDish)} */}
+          {this.renderComment(this.state.selectedDish)}
           {/* {this.renderComment(this.normaldish)} */}
           </div>
         </div>
@@ -130,4 +138,4 @@ class Menu extends Component {
   } // end return render
 }
 
-export default Menu;
+export default MenuDetail;
