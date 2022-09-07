@@ -2,6 +2,9 @@
 import { Component } from 'react';
 
 import Main from './components/MainComponent';
+import './App.css';
+import {BrowserRouter} from 'react-router-dom';
+
 class App extends Component  {
 
   render (){
@@ -19,9 +22,11 @@ class App extends Component  {
       //   <Menu dishes={this.state.dishes} />
         
       // </div>
-      <div className="App">
+      <BrowserRouter>
+            <div className="App">
          <Main />
       </div>
+      </BrowserRouter>
     );
   }
   
